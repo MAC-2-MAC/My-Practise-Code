@@ -36,7 +36,7 @@ console.log(team_names.concat(team_list)); // it concates the two array
 console.log(team_names instanceof Array); // check the our object is an array  or not
 console.log(Array.isArray(team_list)); // another method to check whether it is an array or not
 
-console.log(team_names.indexOf("SAMAS")); // if the passed value in index of matches then it will show the index of that value in the array or else it will show -1 means the value not found in the array.
+console.log(team_names.indexOf("SAMAS")); // if the passed value in index of matches then it will show the index of that value in the array or else it will show -1 means the value not found in the array.If samas is pren
 console.log(team_list.at(2)); // used to get the value of the index number in the given brackerts .at(2)
 console.log(team_list[2]);
 
@@ -93,7 +93,7 @@ console.log(team_list);
 console.log(team_list.splice(2));//splices the first two indexes in the array
 
 console.log("======");
-const months = [ "jan","feb","mar","apr",'may',"june","july"];
+const months = [ "jan","feb","mar","apr",'may',"feb","june","july"];
 let spliced = months.toSpliced(1,3); // this new method is introduced in 2023 which directly creates a new array when it gets spliced, the old array will remain same as it was (answer is : jan,may,june,july)
 console.log(spliced);
 console.log("======");
@@ -102,8 +102,103 @@ console.log(arr4);
 console.log("======");
 const arr5 = months.slice(1,5);// here splice method is used to create a new array from the existing array where the first index indicates index number from 0 from where it should start slicing and the second parameter is the value start from array length means it starts from 1 so we have to give values accrodingly.
 console.log(arr5);
-console.log("=======");
+console.log("====array searching methods===");
+console.log(months.indexOf("feb")); // shows the first index if it has two same values
+console.log(months.lastIndexOf("feb"));// shows the last index if it has two same values
+console.log(months.includes('feb')); // if values passed in the brackets is present, will result true or false
+const arr6 = [2,5,7,8,10];// returns the first value after the condition matched
+let arr7 = arr6.find(myFunction);
 
+function myFunction(value,index,array){
+    return value > 7;
+}
+console.log(arr7);
+console.log(arr6.findIndex(myFunction));// finds the index of the first matched value after condition satisfy
+console.log(arr6.findLast(myFunction)); // here it will search from last index which satisfies the condition
+console.log(arr6.findLastIndex(myFunction)); // finds the index of first matched value, starts from descending
+
+console.log("========array sorting methods===========");
+
+const arrNames = ["mehdi","imran","sheeba","ismail","rubab","zehra"];
+console.log(arrNames.sort());//sorts the array in alphabetical order;
+console.log(arrNames.reverse());// reverse the array
+
+let arrToSorted = arrNames.toSorted();
+console.log(arrToSorted);// this new es2023 concept where it creates a new array instead of altering old array
+
+let arrToReverse = arrNames.toReversed(); // not working in node.js environment
+console.log(arrToReverse);
+
+let arr8 = [1,34,53,64,23,544,12,100];
+console.log(arr8.sort()); // this will give different output than we expect so we use some function to get correct output
+console.log(arr8.sort(function(a,b){ return a-b;})); // this will give the output what we expect
+console.log(arr8.sort(function(a,b){ return b-a;}));// descending numbers sort
+
+console.log("=========array iteration=========");
+// const arr9 = [20,40,50,20,100];
+// let result = " ";
+// arr9.forEach(myFunc);
+// function myFunc(value,index,array){
+//    result += value + "<br>";
+// };
+// console.log(result);
+const num1 = [ 10,25,50,100 ];
+let result = num1.map(myFunc); // used to get a new array and this map method will go through each element in the original array and applies the given rule in function to each element and returns the data in the new aray
+function myFunc(value,index,array) {
+return value * 2;
+}
+console.log(num1);
+console.log(result);
+
+let result2 = num1.filter(myFuncTwo); // filter creates a new array with the condition passes the test-functio
+    function myFuncTwo(value,index,array){
+        return value > 25;
+    };
+    console.log(result2);
+
+    let result3 = num1.reduce(myFunc3,200); // reduce is used to get the sum of total element values, it has two parameters one is total menas the initial value of the array and the value means the total sum of other elements in the array, and it can also have the second parameter in the reduce declaring fucntion where we mention 200 it add the 200 value to the result and displays it as the output
+
+        function myFunc3(total,value){
+            return total + value;
+        }
+    console.log("the intital value to remainig value sum is:",result3);//185
+
+    let result4 = num1.reduceRight(myFunc4); // both reduce and reduce right method are same but reduce will start from left to right and reduce right will start from rgiht to left
+    function myFunc4(total,value,index,array){
+          return total + value;
+    }
+    console.log(result4);
+
+    let result5 = num1.every(myFunc5); //every is used to check the conditon while all the elements in the array passes the condition then it result true or else return false
+    function myFunc5(value){
+        return value > 20;
+    }
+    console.log(result5);
+
+    let result6 = num1.some(myFunc6); // some checks whether some of the elements in the array passes the condition given in the function.
+    function myFunc6(value){
+        return value > 20;
+    }
+    console.log(result6);
+    
+    let alpha = Array.from("abcdefghij");// this arry.from method creates a new array from a given string or numbers
+    console.log(alpha);
+
+    // let arr10 = ["apple","banana","cat","dog"];
+    // let keys = arr10.keys();
+    // let text = " ";
+    // for(let x of keys){
+    //     text += x + "<br>";
+    // }
+ 
+    let arr11 = ["banana","grapes","oranges","lemons"];
+    let arr12 = arr11.with(2,"pomogranates");// this with method will return a a new array with the changed value which we give in the brackets the original array will be same as it is.
+    console.log(arr12);
+    console.log("=========spread array=======")
+    let arr13 = [...arr8, ...arr11, ...arr12];// spread array means joins all the arrays mention with ...arrname will be added in one single arrray
+    console.log(arr13);
+
+    console.log("----here we are good to end with the arrays concepts");
 
 
 
