@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="c1">this is first paragraph with class name c1</p>
+    <p class="c1">this the second paragraph with class name c1 only like in the above p tag </p>
+    <!--in the above two p tags we gave same class name which will work fine and give the result in browser console, the class atribute acts a html collection where the inclueded tags were added in a array , and we can access them using the index numbering system-->
+
+    <script>
+        let var1 = document.getElementsByClassName("c1");
+        console.log(var1);
+        console.log(var1[0]);
+        console.log(var1[1]);
+    </script>
+</body>
+</html>

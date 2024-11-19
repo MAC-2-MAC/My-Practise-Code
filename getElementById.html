@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="idname">this is paragraph one with id as idname</p>
+    <p id="idname">this is paragraph two with id as idname only lets see if they both will be printted or not</p>
+    <!--  in above two paragraphs we gave same id name which will result in misfunctioning, as the js and css rules are id should be unique in its name in whole file, if we give two id names same , then only the first id name will get effected and the remainig will not get effected, for doing this we  have the class there we can give multiple tags with same class name that will be working perfectly-->
+    <script>
+        var num1 = document.getElementById('idname');
+        console.log(num1);
+    </script>
+</body>
+</html>

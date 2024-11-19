@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi veniam ratione sapiente quisquam, voluptatibus qui maxime expedita debitis? Voluptatum id in hic deserunt quibusdam error blanditiis. Aperiam in animi aspernatur!</p>
+
+    <p>this paragraph will change after some time , where i am going to use the settimeout property and inner html property in js</p>
+
+    <p> this is second pargraph which will be changed after 10 sec with the exact text which we enter through innertext in js</p>
+
+    <script>
+        setTimeout(function(){// innerHTML is used to change the html of the selector
+            document.querySelector("p:first-of-type").innerHTML = "paragraph is changed to the newly written paragraph from inner html attribute of js";
+            document.querySelector("p:last-of-type").innerText = "<head> this is the head tag </head>, <body> this is the body tag </body>";// inner text will display the exact text without interpretind the tags , mainly used to took input from the user like comment boxes etc...
+        },10000); // settimeout method is used to execute the code with in the its parameters with havng the second parameter which will take time in millisecond, 10000 milliseconds means 10 sec , the para content will change after 10 sec after the page loads.
+    </script>
+    
+</body>
+</html>

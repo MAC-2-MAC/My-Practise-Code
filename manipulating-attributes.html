@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src = "dp-2.jpeg" >
+    <button onclick = "changeImage();" >Change Image</button>
+
+    <script>
+        function changeImage(){
+            //document.querySelector('img').src = "dp.png"; here we change the image without using set Attribute
+
+            console.log(document.querySelector( "img" ).hasAttribute('src'));// results will be true if src is found in img tag
+            console.log(document.querySelector('img').getAttribute('src')); // display the image details (image name)
+            document.querySelector('img').setAttribute('src', 'dp.png'); // changes the image with clicking the button with the help of setAttribute
+        }
+    </script>
+    
+</body>
+</html>

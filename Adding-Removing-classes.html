@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fsb{
+            font-size: 2em;
+            background-color:black;
+            color: white;
+            font-size: 2 em;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p class = 'red'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis nobis mollitia omnis quis rem molestiae, repellendus pariatur suscipit? Sapiente facilis laborum, id placeat amet obcaecati! Illum magni nisi molestiae reprehenderit?</p>
+
+    <!-- <p class=".fsb">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id enim quo magni. Obcaecati reiciendis expedita sunt nobis asperiores aspernatur, iusto praesentium, a non doloremque, earum inventore omnis rerum excepturi dicta.</p> -->
+    <button onclick = "changecolor();" > Click Me! </button>
+
+    <script>
+        function changecolor(){
+            document.getElementsByTagName("p")[0].classList.remove("red");// we dont have to mention (.) while giving the class name after classList.add, here we are removing the class red
+            document.getElementsByTagName("p")[0].classList.add("fsb");// definately we have to mention the index number if we are using the getElementsByTagName, here we are adding the class fsb
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="cn">class1</p>
+    <p class="cn">class2</p>
+    <p class="cn">class3</p>
+
+    <script>
+        let num1 = document.querySelector(".cn");// gives only first matched result for getting all elements we use querySelctorAll attriute, we use class attribute names here in the query selector using (.)
+        console.log(num1);
+
+        let num2 = document.querySelectorAll(".cn"); // this will show all elements with classname cn, like class  this will also show up the nodelist of array where we can accees them with the array indexing number
+        console.log(num2);
+        console.log(num2[1]); // this will show the 2nd para
+    </script>
+</body>
+</html>
