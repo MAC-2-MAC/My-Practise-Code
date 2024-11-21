@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "id1" > Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum quos est esse voluptates sed? Vitae quod impedit, magnam expedita ratione quas corrupti facere doloremque. Odio culpa magnam aspernatur labore natus.</p>
+    <button>Click Me!</button>
+    
+    <script>
+        function mouseoverFunction(){
+            console.log("mouse is overed on paragraph 1")
+        }
+        function mouseoverFunction2(){
+            console.log("mouse is overed on paragraph (2)")
+        }
+        //document.getElementById('id1').onmouseover = mouseoverFunction;
+       // document.getElementById("id1").onmouseover = mouseoverFunction2;// here while we use without addEventlistener only the latest event handler will show the output, so we use addevent listener to handle multiple event handlers fire at once
+
+        document.getElementById('id1').addEventListener('mouseover', function (){
+            console.log("mouse is overed for paragraph 1 with addeventlistener (1)");
+        }); // add event listener takes two parameters one for the event action name, and other is the function to implement the code
+        document.getElementById('id1').addEventListener('mouseover', function(){
+            console.log("mouse is overed for paragraph 2 with addEventListener (2)");
+        });// through this add event listener we can handle multiple event fire at once when we mouseover the paragraph
+    
+    
+    </script>
+</body>
+</html>

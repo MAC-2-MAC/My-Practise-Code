@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto repellendus laboriosam qui aspernatur quibusdam consectetur itaque modi vel dolor quidem! Quaerat possimus qui, harum expedita illo n
+        <a href="https://www.google.com">google search page</a>
+    <button>click</button>
+
+    <script>
+        document.querySelector('button').addEventListener('click', function(event){
+            console.log(event); // this will through a pointer event
+        });
+
+        document.querySelector('a').addEventListener('click', function(event){
+            if(!confirm("are you ready to leave this beautiful page ?")) { // this will through a confirm dialogue where if we press okay then it takes to the next page or else be same only
+            event.preventDefault();
+            }
+        });
+
+            
+            //event.preventDefault(); // this will not take us to the google page even if we click the link)
+    </script>
+</body>
+</html>

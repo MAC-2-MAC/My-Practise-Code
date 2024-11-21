@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate omnis enim. Iste numquam in vero eum tempora, mollitia nam nesciunt! Delectus eligendi architecto porro ab? Alias magni tempore quam.</p>
+    <!-- <button onclick = handleFunction() >Click Me!</button> --> 
+     <button> Click Me!</button> <!--we can directly give the button click function in js file itself-->
+
+    <script>
+        function handleFunction(){
+            document.querySelector("p").style.color = "red";
+        }
+        document.querySelector('button').onclick = handleFunction;// using onclick in js file itself
+            </script>
+    
+</body>
+</html>

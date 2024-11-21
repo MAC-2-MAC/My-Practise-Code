@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div-gp, #div-p, #div-c {
+            border: 2px solid green;
+            padding: 4em;
+        }
+    </style>
+</head>
+<body>
+    <div id="div-gp">
+        <div id="div-p">
+            <div id="div-c">
+                I am the child
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('div-gp').addEventListener('click', function(){
+            console.log("div gp is clicked");
+        });
+        document.getElementById('div-p').addEventListener('click',function(event){
+            console.log("div p is clicked");
+            event.stopPropagation();// now only div c and div p events will fire as we stop the propagation in the parent div
+            console.log(this); // this will be div p
+            console.log(event.target); // here target will be div c
+            
+        });
+        document.getElementById('div-c').addEventListener('click',function(event){
+            console.log("div c is clicked"); // even though the we click on only div c it the event will propagate to its parent elements also , if we click div gp then only gp event will fire, if we click div p then p,gp events will fire, if we click div c then c,p,gp events will fire because c is the inner most element in the body, if we click the inner most element the body the the parent elements will also gets fired as the child is in parent elements body, to stop this we use event.stopPropagation then it wont propagate to its parent elements.
+       // event.stopPropagation(); // it wont propagate to the parent and grand parent element
+
+        console.log(this); // this context of event
+        console.log(event.target); // this is event target of the event
+    })
+    </script>
+
+</body>
+</html>
