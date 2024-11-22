@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="favorite-color">Enter Your Favorite color:</label><br>
+    <input type="text" id="favorite-color"> <!--takes input color to store it in the local storage-->
+    <input type="text" id="favorite-city">
+    <script>
+        let favoriteColor, favoriteCity;
+       document.querySelector('#favorite-color').addEventListener('input',function(){
+        //we can store only strings in the local storage if we want to store objects then we want to stringify the objects then we can save them as strings in local storage
+        favoriteColor = this.value;
+        sessionStorage.setItem( 'favorites',JSON.stringify({color:favoriteColor, city:favoriteCity}))  // stores the color in local storage
+        document.body.style.backgroundColor = this.value; // background color will same as input color
+       });
+
+       document.querySelector('#favorite-city').addEventListener('input',function(){
+        favoriteCity = this.value;
+        sessionStorage.setItem('favorites',JSON.stringify({color:favoriteColor, city:favoriteCity}));
+       });
+
+       //THE MAIN DIFFERENCE BETWEEN THE SESSION STORAGE AND THE LOCAL STORAGE IS LOCAL STORAGE STORES THE DATA EVEN IF WE CLOSE THE BROWSER AND OPEN IT AFTERSOME TIME , BUT LOCAL STORAGE CAN STORE THE DATA ONCE WE CLOSE THE BROWSER IT WILL BE ERASED FROM THE BROWSER
+    </script>
+</body>
+</html>

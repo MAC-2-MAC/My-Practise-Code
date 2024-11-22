@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script src="./index.js" type="module"></script>
+    <script src="./store.js" type="module"></script> 
+     we can remove these scripts from here as we import them in the below script-->
+
+    <script type="module">
+        import Cmplx,{sum,diff,product as multiply} from "./index.js" //importing methods from other js.file and remaned one file which has same file name in both js.filesa and imported the default class cmplx
+        import{product} from "./store.js"
+         console.log( sum(10,20) ); // assigning values to sum method which is imported from other js file
+         console.log( diff(10,20) ); // assigning values to diff method which is imported from other js file
+         console.log( multiply(10,20) ); // changed product as multiply to assign values which wont differ
+         console.log(product('sugar',40)); // assigned values to the method which is imported from other js file
+
+         const cmplx = new Cmplx(20,40); // assigning values to cmplx class
+         console.log(cmplx.toString());// calling tostring method which is in imported class cmplx
+        
+    </script>
+</body>
+</html>
